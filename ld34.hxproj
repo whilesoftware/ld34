@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="Project.xml" />
     <movie fps="60" />
-    <movie width="640" />
-    <movie height="360" />
+    <movie width="320" />
+    <movie height="180" />
     <movie version="1" />
     <movie minorVersion="0" />
     <movie platform="Lime" />
@@ -16,20 +16,20 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="C:\cygwin64\home\omaha\code\hypyryl\crashdumper" />
-    <class path="C:\cygwin64\home\omaha\code\hypyryl\flixel" />
-    <class path="C:\cygwin64\home\omaha\code\hypyryl\openfl" />
-    <class path="C:\cygwin64\home\omaha\code\hypyryl\lime" />
+    <class path="C:\HaxeToolkit\haxe\lib\flixel\3,3,11" />
+    <class path="C:\HaxeToolkit\haxe\lib\openfl\3,4,0" />
+    <class path="C:\HaxeToolkit\haxe\lib\lime\2,7,0" />
     <class path="source" />
     <class path="export\windows\cpp\haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="crashdumper=0.0.1&#xA;flixel=3.3.11&#xA;openfl=3.1.1&#xA;lime=2.4.7&#xA;network-sandbox&#xA;openfl-next&#xA;tools=2.4.7&#xA;crashdumper&#xA;HXCPP_CHECK_POINTER&#xA;HXCPP_STACK_TRACE&#xA;FLX_NO_DEBUG&#xA;HXCPP_STACK_LINE&#xA;no-compilation&#xA;NAPE_RELEASE_BUILD&#xA;native&#xA;lime-native&#xA;openfl-native&#xA;safeMode&#xA;windows&#xA;desktop" />
+    <option directives="crashdumper=0.0.1&#xA;flixel=3.3.11&#xA;openfl=3.4.0&#xA;lime=2.7.0&#xA;network-sandbox&#xA;openfl-next&#xA;native&#xA;openfl-native&#xA;tools=2.7.0&#xA;crashdumper&#xA;HXCPP_CHECK_POINTER&#xA;HXCPP_STACK_TRACE&#xA;FLX_NO_DEBUG&#xA;HXCPP_STACK_LINE&#xA;no-compilation&#xA;NAPE_RELEASE_BUILD&#xA;lime-native&#xA;safeMode&#xA;FLX_RENDER_TILE&#xA;windows&#xA;desktop&#xA;display" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="False" />
-    <option additional="--remap flash:openfl&#xA;--macro flixel.system.macros.FlxDefines.run()&#xA;#--macro keep(&quot;Main&quot;)" />
+    <option additional="--remap flash:openfl&#xA;#--macro keep(&quot;Main&quot;)" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>

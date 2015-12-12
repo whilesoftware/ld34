@@ -1,0 +1,54 @@
+﻿{"frames": [
+
+{
+   "filename": "Layer 0 copy",
+   "frame": {"x":0, "y":0,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "Layer 2",
+   "frame": {"x":32, "y":0,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "Layer 3",
+   "frame": {"x":64, "y":0,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "Layer 4",
+   "frame": {"x":0, "y":32,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "Layer 5",
+   "frame": {"x":32, "y":32,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+],
+"meta": {
+   "app": "Adobe Flash Professional",
+   "version": "14.0",
+   "Target": "Edge Animate",
+   "Target Version": "4.0",
+   "image": "dude-clean.png",
+   "format": "RGBA8888",
+   "size": {"w":96 ,"h":64 },
+   "scale": "1"
+}
+}
