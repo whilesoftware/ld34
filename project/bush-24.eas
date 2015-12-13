@@ -1,0 +1,54 @@
+﻿{"frames": [
+
+{
+   "filename": "Layer 1",
+   "frame": {"x":0, "y":0,"w":24 , "h":24 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":24 , "h":24 },
+   "sourceSize": {"w":24 ,"h":24 }
+}
+,{
+   "filename": "Layer 2",
+   "frame": {"x":24, "y":0,"w":24 , "h":24 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":24 , "h":24 },
+   "sourceSize": {"w":24 ,"h":24 }
+}
+,{
+   "filename": "Layer 3",
+   "frame": {"x":48, "y":0,"w":24 , "h":24 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":24 , "h":24 },
+   "sourceSize": {"w":24 ,"h":24 }
+}
+,{
+   "filename": "Layer 4",
+   "frame": {"x":0, "y":24,"w":24 , "h":24 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":24 , "h":24 },
+   "sourceSize": {"w":24 ,"h":24 }
+}
+,{
+   "filename": "Layer 5",
+   "frame": {"x":24, "y":24,"w":24 , "h":24 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":24 , "h":24 },
+   "sourceSize": {"w":24 ,"h":24 }
+}
+],
+"meta": {
+   "app": "Adobe Flash Professional",
+   "version": "14.0",
+   "Target": "Edge Animate",
+   "Target Version": "4.0",
+   "image": "bush-24.png",
+   "format": "RGBA8888",
+   "size": {"w":72 ,"h":48 },
+   "scale": "1"
+}
+}

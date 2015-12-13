@@ -18,20 +18,34 @@ import flixel.tweens.FlxEase;
 class GameState extends FlxState {
 	var frame:Int;
 	
-	//var trees:Array<Tree>;
+	public var trees:Array<Tree>;
 	var dude:Dude;
+	
+	var ground:FlxSprite;
 	
 	override public function create():Void {
 		frame = -1;
 
-		FlxG.mouse.visible = false;
-		FlxG.camera.bgColor = 0xff1e202d;
+		//FlxG.mouse.visible = false;
+		//var sprite = new FlxSprite();
+		//sprite.loadGraphic("assets/images/crosshair.png", false, 45, 45);
+		// Load the sprite's graphic to the cursor
+		//FlxG.mouse.load(sprite.pixels);
 		
-		// create ground
+		FlxG.camera.bgColor = 0xff1e202d;
 		
 		// create character
 		dude = new Dude();
+		dude.reset();
 		add(dude);
+		
+		// create ground
+		ground = new FlxSprite();
+		ground.loadGraphic("assets/images/ground.png", false, 320, 20);
+		MathHelper.CenterSprite(ground, "x");
+		ground.y = FlxG.height - 20;
+		add(ground);
+
 		
 		// create title
 		
@@ -46,6 +60,8 @@ class GameState extends FlxState {
 		frame++;
 		
 		super.update();
+		
+		Reg.update();
 
 	}
 }

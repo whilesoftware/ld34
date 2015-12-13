@@ -1,0 +1,118 @@
+﻿{"frames": [
+
+{
+   "filename": "Layer 5",
+   "frame": {"x":0, "y":0,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "Layer 0",
+   "frame": {"x":32, "y":0,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "Layer 1",
+   "frame": {"x":64, "y":0,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "Layer 2",
+   "frame": {"x":96, "y":0,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "Layer 3",
+   "frame": {"x":0, "y":32,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "Layer 4",
+   "frame": {"x":32, "y":32,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "legs standing",
+   "frame": {"x":64, "y":32,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "legs jumping",
+   "frame": {"x":96, "y":32,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "legs moving contact",
+   "frame": {"x":0, "y":64,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "legs moving recoil",
+   "frame": {"x":32, "y":64,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "legs moving passing",
+   "frame": {"x":64, "y":64,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "legs moving high point",
+   "frame": {"x":96, "y":64,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+,{
+   "filename": "legs falling",
+   "frame": {"x":0, "y":96,"w":32 , "h":32 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":32 , "h":32 },
+   "sourceSize": {"w":32 ,"h":32 }
+}
+],
+"meta": {
+   "app": "Adobe Flash Professional",
+   "version": "14.0",
+   "Target": "Edge Animate",
+   "Target Version": "4.0",
+   "image": "dude-again.png",
+   "format": "RGBA8888",
+   "size": {"w":128 ,"h":128 },
+   "scale": "1"
+}
+}
