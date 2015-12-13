@@ -13,6 +13,8 @@ class Reg
 	
 	public static var gamestate:GameState;
 	
+	public static var ground_height:Int = 19;
+	
 	public static function update() {
 		frame_number++;
 	}
