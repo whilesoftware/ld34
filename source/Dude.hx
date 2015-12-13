@@ -179,7 +179,6 @@ class Dude extends FlxGroup {
 		
 		
 		mouse_position = FlxG.mouse.getWorldPosition();
-		trace("mouse_position: " + mouse_position.x + "," + mouse_position.y);
 
 	}
 	
@@ -443,7 +442,12 @@ class Dude extends FlxGroup {
 		resolve_collisions_and_update_simstate();
 		
 		animate();
-		
+
+		// if the game is over, we can't fire any more water
+		if (Reg.gamestate.state == 2) {
+			return;
+		}
+
 		// should we spray a water particle?
 		if (fire_input) {
 			// create a new water particle

@@ -37,12 +37,22 @@ class GameState extends FlxState {
 	
 	var ground:FlxSprite;
 	
-	var state:Int = -1;
+	public var state:Int = -1;
 	
 	public function water_stuff(xpos:Float) {
 		// look for trees within a few pixels of this x location
+		for(tree in trees) {
+			if (Math.abs(xpos - tree.x) > 8) {
+				// too far away, ignore this tree
+				continue;
+			}
+
+			// for each, give it some love
+			if (state == 0) {
+				state = 1;
+			}
+		}
 		
-		// for each, give it some love
 	}
 	
 	override public function create():Void {
@@ -115,9 +125,10 @@ class GameState extends FlxState {
 		for (n in 0...2) {
 			var newtree:Tree = new Tree(FlxRandom.intRanged(40, 280));
 			treegroup.add(newtree);
+			trees.push(newtree);
 		}
 		
-		state = 1;
+		state = 0;
 		
 	}
 
@@ -128,6 +139,7 @@ class GameState extends FlxState {
 		switch(state) {
 			case 0:
 				// we're waiting for the game to start
+
 			case 1:
 				// the game is running, update the frame count
 				frame++;
