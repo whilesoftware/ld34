@@ -20,17 +20,30 @@ import flixel.util.FlxRandom;
 class GameState extends FlxState {
 	public var frame:Int;
 	
+	public var bgcolor:Int = 0xff000000;
+	
+	public var bgcolor_timeline:Timeline;
+	
 	public var trees:Array<Tree>;
 	var treegroup:FlxGroup;
 	var next_tree_spawn_time:Int = 0;
 	
 	var grasses:FlxGroup;
+	public var gun_group:FlxGroup;
+	
+	public var waters:FlxGroup;
 	
 	var dude:Dude;
 	
 	var ground:FlxSprite;
 	
 	var state:Int = -1;
+	
+	public function water_stuff(xpos:Float) {
+		// look for trees within a few pixels of this x location
+		
+		// for each, give it some love
+	}
 	
 	override public function create():Void {
 		frame = -1;
@@ -43,15 +56,44 @@ class GameState extends FlxState {
 		// Load the sprite's graphic to the cursor
 		//FlxG.mouse.load(sprite.pixels);
 		
-		FlxG.camera.bgColor = 0xff1e202d;
+		// 3 minutes => 180 seconds
+		bgcolor_timeline = new Timeline();
+		bgcolor_timeline.type = TimeNodeType.color;
+		// start black
+		bgcolor_timeline.nodes.push(new TimeNode(0, FlxColorUtil.getColor32(255, 0, 0, 0), FlxEase.cubeOut));
+		// fade quickly towards red
+		bgcolor_timeline.nodes.push(new TimeNode(2 * 60, 0xff570f01, FlxEase.cubeOut));
+		// fade to yellow
+		bgcolor_timeline.nodes.push(new TimeNode(6 * 60, 0xfffecf27, FlxEase.cubeOut));
+		// lighten up to mid-day
+		bgcolor_timeline.nodes.push(new TimeNode(8 * 60, 0xffffd5a0, FlxEase.sineOut));
+		// mid-day blue
+		bgcolor_timeline.nodes.push(new TimeNode(10 * 60, 0xff0f8ecf, FlxEase.sineOut));
+		// afternoon
+		bgcolor_timeline.nodes.push(new TimeNode(120 * 60, 0xff89739d, FlxEase.quintIn));
+		// evening
+		bgcolor_timeline.nodes.push(new TimeNode(160 * 60, 0xff261b44, FlxEase.sineOut));
+		// night time
+		bgcolor_timeline.nodes.push(new TimeNode(170 * 60, 0xff03031f, FlxEase.sineOut));
+		// game over
+		bgcolor_timeline.nodes.push(new TimeNode(180 * 60, 0xff000000, FlxEase.sineOut));
 		
 		treegroup = new FlxGroup();
 		add(treegroup);
+
+		gun_group = new FlxGroup();
 		
 		// create character
 		dude = new Dude();
 		dude.reset();
 		add(dude);
+		
+				
+		waters = new FlxGroup();
+		add(waters);
+		
+		
+		add(gun_group);
 		
 		// create ground
 		ground = new FlxSprite();
@@ -79,8 +121,10 @@ class GameState extends FlxState {
 		
 	}
 
-	//override public function update(elapsed:Float):Void {
 	override public function update():Void {
+		
+		FlxG.camera.bgColor = bgcolor;
+		
 		switch(state) {
 			case 0:
 				// we're waiting for the game to start
@@ -88,16 +132,12 @@ class GameState extends FlxState {
 				// the game is running, update the frame count
 				frame++;
 				
-				if (frame == next_tree_spawn_time) {
-					// create a new tree
-					
-					// randomize time until next tree is created
-				}
+				// set new bgcolor
+				bgcolor = bgcolor_timeline.value(frame);
+				FlxG.camera.bgColor = bgcolor;
 			case 2:
 				// the game just ended
 				// throw up the end-game UI
-			case 3:
-				// the user hit reset, restart the game
 				
 		}
 		

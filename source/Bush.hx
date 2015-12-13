@@ -69,12 +69,13 @@ class Bush extends FlxSprite {
 		
 		// assign it one of our spritesheets and an animation
 		loadGraphic("assets/images/bush-" + Std.string(size) + ".png", true, size, size, true);
+		/*
 		this.replaceColor(0xffffffff, 
 			(0xff << 24) |
 			(FlxRandom.intRanged(0, 255) << 16) |
 			(FlxRandom.intRanged(0, 255) << 8) |
 			(FlxRandom.intRanged(0, 255)) );
-			
+		*/	
 		alpha = FlxRandom.floatRanged(0.5, 1);
 		blend = BlendMode.LIGHTEN;
 			

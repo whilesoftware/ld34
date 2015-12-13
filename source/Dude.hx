@@ -22,6 +22,8 @@ enum Simstate {
 
 class Dude extends FlxGroup {
 	
+	var point_vector:FlxVector;
+	
 	var cstate:Simstate = Simstate.airborn;
 	var cstate_start_time:Float;
 	var pstate:Simstate = Simstate.airborn;
@@ -126,6 +128,8 @@ class Dude extends FlxGroup {
 	{
 		super();
 		
+		point_vector = new FlxVector();
+		
 		body.loadGraphic("assets/images/dude-again.png", true, width, height);
 		body.animation.add("cycle", [1, 2, 3, 4, 5], 10, true);
 		add(body);
@@ -140,7 +144,7 @@ class Dude extends FlxGroup {
 		
 		// 12,12 is at 16,23
 		gun.loadGraphic("assets/images/gun.png", false, 24, 24);
-		add(gun);
+		Reg.gamestate.gun_group.add(gun);
 	}
 	
 
@@ -170,11 +174,9 @@ class Dude extends FlxGroup {
 		
 		jump_input = FlxG.keys.anyPressed(["SPACE"]);
 		
-		/*
-		if (FlxG.mouse.pressed) {
-			fire_input = true;
-		}
-		*/
+		
+		fire_input = FlxG.mouse.pressed;
+		
 		
 		mouse_position = FlxG.mouse.getWorldPosition();
 		trace("mouse_position: " + mouse_position.x + "," + mouse_position.y);
@@ -394,14 +396,13 @@ class Dude extends FlxGroup {
 		
 		// point the gun at the mouse's location
 		if (mouse_position != null) {
-			var point_vector:FlxVector = new FlxVector((mouse_position.x + 0) - (x + 16), (mouse_position.y + 0) - (y + 23));
+			point_vector.x = (mouse_position.x + 0) - (x + 16);
+			point_vector.y = (mouse_position.y + 0) - (y + 23);
 			gun.angle = point_vector.degrees;
 			if (mouse_position.x < x + 16) {
 				gun.angle += 180;
 			}
 		}
-		
-		
 	}
 	
 	public override function update() {
@@ -442,6 +443,21 @@ class Dude extends FlxGroup {
 		resolve_collisions_and_update_simstate();
 		
 		animate();
+		
+		// should we spray a water particle?
+		if (fire_input) {
+			// create a new water particle
+			var new_water:WaterParticle = new WaterParticle();
+			Reg.gamestate.waters.add(new_water);
+			
+			point_vector.normalize();
+			
+			var startx:Float = x + 15 + point_vector.x * 12;
+			var starty:Float = y + 22 + point_vector.y * 12;
+			
+			// set it in motion
+			new_water.gobabygo(startx, starty, point_vector.x, point_vector.y);
+		}
 	}
 	
 }
