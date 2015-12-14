@@ -82,10 +82,14 @@
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
 	
 	<!--------------------------------CUSTOM---------------------------------------->
-    <assets path="assets/sounds" if="flash" embed="true">
+    <assets path="assets/sounds/flash" if="flash" embed="true">
+		<sound path="noise.mp3" id="noise" />
+		<sound path="awful-music.mp3" id="awful" />
     </assets>
 
-    <assets path="assets/sounds" unless="flash" embed="true">
+    <assets path="assets/sounds/cpp" unless="flash" embed="true">
+		<sound path="noise.ogg" id="noise" />
+		<sound path="awful-music.ogg" id="awful" />
 	</assets>
 	
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
