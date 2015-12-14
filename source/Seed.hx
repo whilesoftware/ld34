@@ -11,9 +11,7 @@ import flixel.util.FlxRandom;
  * ...
  * @author ...
  */
-class Seed extends FlxSprite
-{
-
+class Seed extends FlxSprite {
     public function new()
     {
         super();
@@ -42,6 +40,13 @@ class Seed extends FlxSprite
 		super.update();
 		
 		// did we hit the ground?
+		if (y > FlxG.height - Reg.ground_height) {
+			kill();
+			Reg.gamestate.goodsound();
+			Reg.gamestate.newtree(Std.int(x));
+		}
+		
+		
 		if (velocity.x < 0 && x < -10) {
 			kill();
 		}

@@ -84,12 +84,30 @@
 	<!--------------------------------CUSTOM---------------------------------------->
     <assets path="assets/sounds/flash" if="flash" embed="true">
 		<sound path="noise.mp3" id="noise" />
+		<sound path="noise2.mp3" id="noise2" />
 		<sound path="awful-music.mp3" id="awful" />
+		<sound path="good-0.mp3" id="good-0" />
+		<sound path="good-1.mp3" id="good-1" />
+		<sound path="good-2.mp3" id="good-2" />
+		<sound path="good-3.mp3" id="good-3" />
+		<sound path="good-4.mp3" id="good-4" />
+		<sound path="good-5.mp3" id="good-5" />
+		<sound path="good-6.mp3" id="good-6" />
+		<sound path="good-7.mp3" id="good-7" />
     </assets>
 
     <assets path="assets/sounds/cpp" unless="flash" embed="true">
 		<sound path="noise.ogg" id="noise" />
+		<sound path="noise2.ogg" id="noise2" />
 		<sound path="awful-music.ogg" id="awful" />
+		<sound path="good-0.ogg" id="good-0" />
+		<sound path="good-1.ogg" id="good-1" />
+		<sound path="good-2.ogg" id="good-2" />
+		<sound path="good-3.ogg" id="good-3" />
+		<sound path="good-4.ogg" id="good-4" />
+		<sound path="good-5.ogg" id="good-5" />
+		<sound path="good-6.ogg" id="good-6" />
+		<sound path="good-7.ogg" id="good-7" />
 	</assets>
 	
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->

@@ -443,13 +443,10 @@ class Dude extends FlxGroup {
 		
 		animate();
 
-		// if the game is over, we can't fire any more water
-		if (Reg.gamestate.state == 2) {
-			return;
-		}
-
 		// should we spray a water particle?
 		if (fire_input) {
+			Reg.gamestate.watersound.volume = 0.5;
+			
 			// create a new water particle
 			var new_water:WaterParticle = new WaterParticle();
 			Reg.gamestate.waters.add(new_water);
@@ -461,7 +458,8 @@ class Dude extends FlxGroup {
 			
 			// set it in motion
 			new_water.gobabygo(startx, starty, point_vector.x, point_vector.y);
+		}else {
+			Reg.gamestate.watersound.volume = 0;
 		}
 	}
-	
 }

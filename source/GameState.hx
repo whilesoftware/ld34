@@ -31,6 +31,8 @@ class GameState extends FlxState {
 	
 	var title:FlxSprite;
 	
+	var overandout:Bool = false;
+	
 	var grasses:FlxGroup;
 	public var gun_group:FlxGroup;
 	
@@ -45,8 +47,33 @@ class GameState extends FlxState {
 	
 	var music:FlxSound;
 	var noise:FlxSound;
+	public var watersound:FlxSound;
 	
 	var time_to_seed:Int = 0;
+	
+	
+	public var goodsounds:Array<FlxSound>;
+	public var goodsounds2:Array<FlxSound>;
+	var gs_index:Int = 0;
+	
+	public function goodsound() {
+		goodsounds[gs_index].play();
+		gs_index++;
+		
+		if (gs_index == 8) {
+			gs_index = 0;
+		}
+	}
+	
+	public function greatsound() {
+		
+		for (n in 0...8) {
+			new FlxTimer().start(0.1 * n).complete = function(t:FlxTimer):Void {
+				goodsounds2[n].play();
+			}
+		}
+		
+	}
 	
 	public function water_stuff(xpos:Float) {
 		// look for trees within a few pixels of this x location
@@ -111,7 +138,7 @@ class GameState extends FlxState {
 		
 		// create ground
 		ground = new FlxSprite();
-		ground.loadGraphic("assets/images/ground.png", false, 320, 20);
+		ground.loadGraphic("assets/images/ground.png", false, 640, 20);
 		MathHelper.CenterSprite(ground, "x");
 		ground.y = FlxG.height - 20;
 		add(ground);
@@ -121,23 +148,25 @@ class GameState extends FlxState {
 		title = new FlxSprite();
 		title.loadGraphic("assets/images/title.png", true, 160, 64);
 		title.animation.add("title", [0, 1, 2, 3], 8, true);
+		title.animation.add("ending", [4, 5, 6, 7], 8, true);
 		MathHelper.CenterSprite(title, "x");
 		title.y = 10;
 		title.animation.play("title");
 		add(title);
 		
-		// TODO: create grass
+		// create grass
 		grasses = new FlxGroup();
 		add(grasses);
+		
+		for (n in 0...40) {
+			var grass:Grass = new Grass();
+			grasses.add(grass);
+		}
 		
 		
 		// create a few trees at shrub state
 		trees = new Array<Tree>();
-		for (n in 0...2) {
-			var newtree:Tree = new Tree(FlxRandom.intRanged(40, 280));
-			treegroup.add(newtree);
-			trees.push(newtree);
-		}
+		newtree(-1);
 		
 		state = 0;
 		
@@ -145,8 +174,29 @@ class GameState extends FlxState {
 		noise.play();
 		FlxTween.tween(noise, { volume: 0.8 }, 3);
 		
+		watersound = FlxG.sound.load("noise2", 0, true);
+		watersound.play();
+		
 		music = FlxG.sound.load("awful", 0, false, true, false);
 		
+		goodsounds = new Array<FlxSound>();
+		goodsounds2 = new Array<FlxSound>();
+		for( n in 0...8) {
+			goodsounds.push(FlxG.sound.load("good-" + Std.string(n), 0.4, false));
+			goodsounds2.push(FlxG.sound.load("good-" + Std.string(n), 0.4, false));
+		}
+		
+	}
+	
+	public function newtree(xpos:Int) {
+		var newtree:Tree;
+		if (xpos == -1) {
+			newtree = new Tree(FlxRandom.intRanged(40, 280));
+		}else {
+			newtree = new Tree(xpos);
+		}
+		treegroup.add(newtree);
+		trees.push(newtree);
 	}
 
 	override public function update():Void {
@@ -177,12 +227,25 @@ class GameState extends FlxState {
 				// set new bgcolor
 				bgcolor = bgcolor_timeline.value(frame);
 				FlxG.camera.bgColor = bgcolor;
+				
+				FlxG.overlap(waters, seeds, dropSeed);
+				
+				if (frame == 180 * 60) {
+					state = 2;
+				}
+				
 			case 2:
 				// the game just ended
-				FlxTween.tween(noise, { volume: 0.8 }, 2);
+				if (! overandout) {
+					FlxTween.tween(noise, { volume: 0.8 }, 2);
 				
-				// throw up the end-game UI
-				
+					// throw up the end-game UI	
+					new FlxTimer(2).complete = function(t:FlxTimer) {
+						FlxTween.tween(title, { alpha: 1 }, 2);
+						title.animation.play("ending");
+					}
+					overandout = true;
+				}
 		}
 		
 		
@@ -192,4 +255,9 @@ class GameState extends FlxState {
 		Reg.update();
 
 	}
+	
+	function dropSeed(water:WaterParticle, seed:Seed) {
+		seed.velocity.set(0, 100);
+	}
+	
 }

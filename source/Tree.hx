@@ -22,7 +22,7 @@ class Tree extends FlxGroup
 	var spawn_time:Int;
 	
 	// the max number of bushes
-	var max_bushes:Int = 20;
+	var max_bushes:Int = 10;
 	
 	// the tree's current height (the center of the bushes
 	public var height:Int = 0;
@@ -48,7 +48,11 @@ class Tree extends FlxGroup
 	
 	var max_height:Int = 0;
 	
+	var total_bush_count:Int = 0;
+	
 	public function get_active_bush_count() {
+		return total_bush_count;
+		/*
 		var retval:Int = 0;
 		for (n in 0...bushes.length) {
 			if (bushes[n].visible) {
@@ -56,10 +60,13 @@ class Tree extends FlxGroup
 			}
 		}
 		return retval;
+		*/
 	}
 	
 	// helper to set/modify a bush
 	function activate_a_bush() {
+		total_bush_count++;
+		
 		next_bush_index++;
 		if (next_bush_index == bushes.length) {
 			next_bush_index = 0;
@@ -80,7 +87,7 @@ class Tree extends FlxGroup
 		super();
 		
 		// create the trunk
-		height = 4;
+		height = 24;
 		trunk = new FlxSprite();
 		recreate_trunk();
 		trunk.x = _x;
@@ -89,9 +96,9 @@ class Tree extends FlxGroup
 		
 		bushes = new Array<Bush>();
 		
-		height_timeout = FlxRandom.intRanged(6, 12);
-		bush_timeout = FlxRandom.intRanged(15, 30);
-		max_height = FlxRandom.intRanged(60, 120);
+		height_timeout = FlxRandom.intRanged(5, 8);
+		bush_timeout = FlxRandom.intRanged(10, 20);
+		max_height = FlxRandom.intRanged(60, 140);
 		
 		width_modifier = FlxRandom.floatRanged(0.8, 1.2);
 		height_modifier = FlxRandom.floatRanged(0.8, 1.2);
@@ -109,7 +116,7 @@ class Tree extends FlxGroup
 		}
 		
 		// activate a few of the bushes
-		for (n in 0...FlxRandom.intRanged(1,4)) {
+		for (n in 0...FlxRandom.intRanged(2,4)) {
 			activate_a_bush();
 		}
 	}
@@ -153,6 +160,9 @@ class Tree extends FlxGroup
 		}
 		
 		if (height == max_height) {
+			if (!colorize) {
+				Reg.gamestate.greatsound();
+			}
 			colorize = true;
 		}
 	}

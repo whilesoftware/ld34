@@ -18,7 +18,7 @@
 }
 ,{
    "filename": "Layer 6",
-   "frame": {"x":0, "y":64,"w":160 , "h":64 },
+   "frame": {"x":320, "y":0,"w":160 , "h":64 },
    "rotated": false,
    "trimmed": false,
    "spriteSourceSize": {"x":0,"y":0,"w":160 , "h":64 },
@@ -26,7 +26,39 @@
 }
 ,{
    "filename": "Layer 7",
+   "frame": {"x":0, "y":64,"w":160 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":160 , "h":64 },
+   "sourceSize": {"w":160 ,"h":64 }
+}
+,{
+   "filename": "Layer 9",
    "frame": {"x":160, "y":64,"w":160 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":160 , "h":64 },
+   "sourceSize": {"w":160 ,"h":64 }
+}
+,{
+   "filename": "Layer 10",
+   "frame": {"x":320, "y":64,"w":160 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":160 , "h":64 },
+   "sourceSize": {"w":160 ,"h":64 }
+}
+,{
+   "filename": "Layer 11",
+   "frame": {"x":0, "y":128,"w":160 , "h":64 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":160 , "h":64 },
+   "sourceSize": {"w":160 ,"h":64 }
+}
+,{
+   "filename": "Layer 12",
+   "frame": {"x":160, "y":128,"w":160 , "h":64 },
    "rotated": false,
    "trimmed": false,
    "spriteSourceSize": {"x":0,"y":0,"w":160 , "h":64 },
@@ -40,7 +72,7 @@
    "Target Version": "4.0",
    "image": "title.png",
    "format": "RGBA8888",
-   "size": {"w":320 ,"h":128 },
+   "size": {"w":480 ,"h":192 },
    "scale": "1"
 }
 }

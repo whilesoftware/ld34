@@ -18,6 +18,8 @@ class Bush extends FlxSprite {
 	public var parent:Tree;
 	
 	var size:Int = 0;
+	
+	var floating:Bool = false;
 
 	public function new() 
 	{
@@ -28,8 +30,22 @@ class Bush extends FlxSprite {
 	public override function update() {
 		super.update();
 		
-		x = parent.x + offset_x - size / 2;
-		y = FlxG.height - Reg.ground_height - parent.height + offset_y - size / 2;
+		if (Reg.gamestate.state != 2) {
+			x = parent.x + offset_x - size / 2;
+			y = FlxG.height - Reg.ground_height - parent.height + offset_y - size / 2;
+		}else {
+			// the game is over!
+			
+			if (! floating) {
+				floating = true;
+				// start them floating away
+				velocity.set(FlxRandom.floatRanged(-50, 50), FlxRandom.floatRanged(-50, 50));
+			}else {
+				if (x < -30 || x > FlxG.width + 30 || y < -30 || y > FlxG.height + 30) {
+					kill();
+				}
+			}
+		}
 	}
 	
 	public function activate_new() {
@@ -52,8 +68,6 @@ class Bush extends FlxSprite {
 		// randomize it's position theta
 		var theta:Float = FlxRandom.floatRanged(0, Math.PI * 2);
 		
-		
-		
 		/*
 		
 			*/
@@ -61,8 +75,8 @@ class Bush extends FlxSprite {
 			//this.replaceColor(0xffffffff, 0xffff0000);
 		
 		// give it a position
-		offset_x = Std.int(size * parent.width_modifier * FlxRandom.floatRanged(0.3, 0.8) * Math.cos(theta));
-		offset_y = Std.int(size * parent.height_modifier * FlxRandom.floatRanged(0.3, 0.8) * Math.sin(theta));
+		offset_x = Std.int(size * parent.width_modifier * FlxRandom.floatRanged(0.3, 0.6) * Math.cos(theta));
+		offset_y = Std.int(size * parent.height_modifier * FlxRandom.floatRanged(0.3, 0.6) * Math.sin(theta));
 		
 		// give it a rotation
 		angle = FlxRandom.floatRanged(0, 360);

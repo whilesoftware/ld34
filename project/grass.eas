@@ -1,0 +1,94 @@
+﻿{"frames": [
+
+{
+   "filename": "Layer 1",
+   "frame": {"x":0, "y":0,"w":8 , "h":16 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":8 , "h":16 },
+   "sourceSize": {"w":8 ,"h":16 }
+}
+,{
+   "filename": "Layer 2",
+   "frame": {"x":8, "y":0,"w":8 , "h":16 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":8 , "h":16 },
+   "sourceSize": {"w":8 ,"h":16 }
+}
+,{
+   "filename": "Layer 3",
+   "frame": {"x":16, "y":0,"w":8 , "h":16 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":8 , "h":16 },
+   "sourceSize": {"w":8 ,"h":16 }
+}
+,{
+   "filename": "Layer 4",
+   "frame": {"x":24, "y":0,"w":8 , "h":16 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":8 , "h":16 },
+   "sourceSize": {"w":8 ,"h":16 }
+}
+,{
+   "filename": "Layer 5",
+   "frame": {"x":0, "y":16,"w":8 , "h":16 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":8 , "h":16 },
+   "sourceSize": {"w":8 ,"h":16 }
+}
+,{
+   "filename": "Layer 6",
+   "frame": {"x":8, "y":16,"w":8 , "h":16 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":8 , "h":16 },
+   "sourceSize": {"w":8 ,"h":16 }
+}
+,{
+   "filename": "Layer 7",
+   "frame": {"x":16, "y":16,"w":8 , "h":16 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":8 , "h":16 },
+   "sourceSize": {"w":8 ,"h":16 }
+}
+,{
+   "filename": "Layer 8",
+   "frame": {"x":24, "y":16,"w":8 , "h":16 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":8 , "h":16 },
+   "sourceSize": {"w":8 ,"h":16 }
+}
+,{
+   "filename": "Layer 9",
+   "frame": {"x":0, "y":32,"w":8 , "h":16 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":8 , "h":16 },
+   "sourceSize": {"w":8 ,"h":16 }
+}
+,{
+   "filename": "Layer 10",
+   "frame": {"x":8, "y":32,"w":8 , "h":16 },
+   "rotated": false,
+   "trimmed": false,
+   "spriteSourceSize": {"x":0,"y":0,"w":8 , "h":16 },
+   "sourceSize": {"w":8 ,"h":16 }
+}
+],
+"meta": {
+   "app": "Adobe Flash Professional",
+   "version": "14.0",
+   "Target": "Edge Animate",
+   "Target Version": "4.0",
+   "image": "grass.png",
+   "format": "RGBA8888",
+   "size": {"w":32 ,"h":48 },
+   "scale": "1"
+}
+}
